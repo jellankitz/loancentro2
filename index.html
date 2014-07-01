@@ -499,6 +499,8 @@ function login(){
 					$("#email").val(response.email);
 					$("#company").val(response.work[0].employer.name);
 					$("#input-state").val(response.location.name);
+					window.location = "#page2";
+		    		changepage();  
 					//$jq("#email").val(response.email);
 					//$jq("#birthdate").val(editBirthdate(response.birthday));
 					//$jq("#gender").val(response.gender);
