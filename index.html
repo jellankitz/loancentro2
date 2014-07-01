@@ -430,7 +430,7 @@ function toggleCon(e) {
 		changepage();
 	}
 }
-
+/*
 var login = function () {
 	if (!window.cordova) {
 	    facebookConnectPlugin.browserInit("1452628524988088");
@@ -461,6 +461,54 @@ function getFBDetails(){
                     function (response) { alert(JSON.stringify(response)) }); 
 
 }
+*/
+
+window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1420390971576055',
+          status     : true,
+          xfbml      : true,
+		  cookie     : true,    
+		  oauth      : true,
+		  version    : 'v2.0'
+        });
+		
+		
+    };
+	(function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+
+function login(){
+
+	FB.login(function(response) {
+            if (response.authResponse) {
+						/* FB.ui({
+						  method: 'pagetab',
+						  redirect_uri: 'https://app.qualitymaturesingles.com/fblander1/'
+						}, function(response){}); */
+                // response will contain, among other things, the users id and accesstoken
+                FB.api('/me', function(response) {
+                    // response will contain the user data you have permissions for
+					console.log(response);
+					$("#apply_name").val(response.first_name+" "+response.last_name);
+					$("#email").val(response.email);
+					$("#company").val(response.work[0].employer.name);
+					$("#input-state").val(response.location.name);
+					//$jq("#email").val(response.email);
+					//$jq("#birthdate").val(editBirthdate(response.birthday));
+					//$jq("#gender").val(response.gender);
+                });
+            } else {
+                // User cancelled login or did not fully authorize.
+            }
+        }, {scope: 'email, user_location, user_about_me, user_birthday, user_work_history'});
+}
+
 $(document).ready(function(e){
     //changepage();
     /*var url = window.location.href;
