@@ -7,7 +7,7 @@
     <author email="chuya000@gmail.com" href="http://chuya00.com">
         Jellan Quitos
     </author>
-    <icon src="img/icon.png" gap:platform="ios" width="114" height="114" />
+    <icon src="img/logo.png" gap:platform="ios" width="114" height="114" />
     <content src="index.html" />
     <access origin="*" />
 
