@@ -8,8 +8,8 @@
         Jellan Quitos
     </author>
 	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
-		<param name="APP_ID" value="1420390971576055" />
-		<param name="APP_NAME" value="Loan Centro" />
+		<param name="APP_ID" value="1452628524988088" />
+		<param name="APP_NAME" value="Loan Centro Mobile App" />
 	</gap:plugin>
     <!--<icon src="img/icon.png" gap:platform="ios" width="114" height="114" />-->
 
